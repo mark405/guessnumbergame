@@ -1,5 +1,7 @@
 package Component;
 
+import Component.console.DataPrinter;
+
 import java.util.Scanner;
 
 /**
@@ -7,8 +9,11 @@ import java.util.Scanner;
  */
 public class UserPlayer extends AbstractPlayer {
 
-    public UserPlayer(final String range) {
+    DataPrinter printer;
+
+    public UserPlayer(final String range, final DataPrinter printer) {
         super(range);
+        this.printer = printer;
     }
 
     @Override
@@ -21,7 +26,7 @@ public class UserPlayer extends AbstractPlayer {
                 return Integer.parseInt(userNumber);
             }
 
-            System.out.println("Please type a number between 0 and 9: ");
+            printer.printInfoMessage();
         }
 
     }

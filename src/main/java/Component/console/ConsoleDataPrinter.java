@@ -10,8 +10,16 @@ public class ConsoleDataPrinter implements DataPrinter{
     }
 
     @Override
-    public void printMistakeMessage(int userNumber) {
-        System.out.println("number < " + userNumber + ". Try again:");
+    public void printLessMistakeMessage(int userNumber) {
+        printMistakeMessage(userNumber, '<');
+    }
+
+    public void printMistakeMessage(int userNumber, char ch) {
+        System.out.println("Guessed number " + ch + " " + userNumber + ". Try again.");
+    }
+
+    public void printMoreMistakeMessage(int userNumber) {
+        printMistakeMessage(userNumber, '>');
     }
 
     @Override
